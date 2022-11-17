@@ -1,0 +1,16 @@
+# action.yml
+name: 'Test GHA - GE'
+description: 'Testing the GHA examples'
+inputs:
+  input-test:  # id of input
+    description: 'Input test'
+    required: true
+    default: 'GE'
+outputs:
+  time: # id of output
+    description: 'Test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.input-test }}
